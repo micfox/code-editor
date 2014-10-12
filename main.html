@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Code Editor</title>
 <link href="css/style.css" media="screen" rel="stylesheet" />
 <script src="js/jquery-1.11.1.js"></script>
 <script src="js/function.js"></script>
-captital
 </head>
 <body>
+  <pre id="editor">function foo(items){
+    var x = "All this is syntax hilighted";
+    return x;
+    }
+// ace editor
+</pre>
+  <script src="js/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.getSession().setMode("ace/mode/javascript");
+  </script>
 	<h1>hello.</h1>
 	<code>git commit</code>
 	<pre><code contenteditable = "true">define all
