@@ -28,12 +28,10 @@
 		 editor.getSession().getLine(0)
 		 );"> tg: getLine </button>
 <div></div>
-<button onclick="v1=editor.getValue();">: snap text</button>
-<button onclick="v2=editor.getValue();
+<button onclick="v1=difflib.stringAsLines(editor.getValue());">: snap text</button>
+<button onclick="v2=difflib.stringAsLines(editor.getValue());
 		 sm=new difflib.SequenceMatcher(v1,v2);
-		 var opcodes=sm.get_opcodes();
-		 var diffout=$("diffoutput");
-		 var contexSize=$("contexSize").value;">: diff</button>
+		 var opcodes=sm.get_opcodes();">: diff</button>
 	<code>git commit</code>
 	<pre><code contenteditable = "true">define all
 </code></pre>
