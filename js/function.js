@@ -10,19 +10,14 @@ $(document).ready(function(){
 	}
     });
   
-    /*  
+
     $("#editor").keypress(function(event){
 //	console.log(event.which);
-<<<<<<< HEAD
-	if(event.which == 13){
-	    console.log();
-//t	    console.log(Object.keys(editor.getCursorPosition()));
-	    console.log(editor.getSession().getLine(editor.getCursorPosition().row));
-=======
-	if(event.shiftKey && (event.which == 13)){
 //	    console.log(Object.keys(editor.getCursorPosition()));
 //	    console.log(editor.getSession().getLine(editor.getCursorPosition().row));
-	          $.ajax({
+
+	if(event.shiftKey && (event.which == 13)){
+	    $.ajax({
 	  url: '/post-line',
 	  type: 'POST',
 	  dataType: 'html',
@@ -38,19 +33,16 @@ $(document).ready(function(){
 	  },
 	  error: function(e){
 	      console.log(e);
-	  },
-      });
-
->>>>>>> fd4e13c59149f00cc8d1f81550f40cd1011ee6db
-	}
+	  },		  
+		  });}
     });
-    */
 
+/*
     editor.on("change",function(e){
 	//return "data"	
 	//console.log(Object.keys(e));
 	console.log(e.data);
     });
+*/
 
-//    $("#snapButton").onclick
 });
