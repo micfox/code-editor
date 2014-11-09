@@ -15,20 +15,19 @@ $(document).ready(function(){
 //	console.log(event.which);
 //	    console.log(Object.keys(editor.getCursorPosition()));
 //	    console.log(editor.getSession().getLine(editor.getCursorPosition().row));
-
+	var text;
 	if(event.shiftKey && (event.which == 13)){
+	    text=editor.getSession().getLine(editor.getCursorPosition().row);
+//	    console.log(text);
 	    $.ajax({
 	  url: '/post-line',
 	  type: 'POST',
 	  dataType: 'html',
-	  data: editor.getSession().getLine(editor.getCursorPosition().row),
+	  data: {'text': text},
 	  beforeSend: function(){
 //	      console.log("before send");
 	  },
 	  success: function(data){
-	      alert.html(data).fadeIn();
-	      //form.tirgger('reset');
-	      submit.html('Send Email');
 	      console.log(data);
 	  },
 	  error: function(e){
