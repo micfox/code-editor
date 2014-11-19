@@ -43,5 +43,39 @@ $(document).ready(function(){
 	console.log(e.data);
     });
 */
+    $("#saveBtn").click(function(){
+	console.log(editor.getValue());
+	$.ajax({
+	    url: '/save-text',
+	    type: 'POST',
+	    dataType: 'html',
+	    data: {'text': editor.getValue()},
+	    success: function(data){
+//		console.log(data);
+	    },
+	})
+    });
+    
+    $("#loadBtn").click(function(){
+	    $.ajax({
+	  url: '/get-text',
+	  type: 'POST',
+	  dataType: 'html',
+	  beforeSend: function(){
+	  },
+	  success: function(data){
+	  editor.setValue(data);
+	  },});
+    });
 
+    $("#analyzeBtn").click(function(){
+	$.ajax({
+	    url: '/analyze-text',
+	    type: 'POST',
+	    dataType: 'html',
+	    success: function(data){
+		editor.setValue(data);
+	    },
+	});
+    });
 });

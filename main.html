@@ -19,18 +19,9 @@
     editor.getSession().setMode("ace/mode/javascript");
   </script>
 <div></div>
-<button>Save</button>
-<button onclick="
-	    $.ajax({
-	  url: '/get-text',
-	  type: 'POST',
-	  dataType: 'html',
-	  beforeSend: function(){
-	  },
-	  success: function(data){
-	  editor.setValue(data);
-	  },});
-">Refresh</button>
+<button id="saveBtn">Save</button>
+<button id="loadBtn">Load</button>
+<button id="analyzeBtn">Analyze</button>
 <div></div>
 <button onclick="console.log(
 		 editor.getSession().getLine(0)
