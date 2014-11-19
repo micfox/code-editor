@@ -1,12 +1,18 @@
 $(document).ready(function(){
-    var v1,v2,sm;
+    var v1,v2,x;
     $(document).on("keypress","code",function(event){
 	console.log(event.which);
-	console.log(this.innerHTML);
+	console.log($(this).text());
+	//console.log($(this).parent().html());
 
+	//console.log(this.outerHTML);
 	if(event.which == 13){
 	    event.preventDefault();
-	    $("<code contenteditable ='true'></code>").appendTo("pre");
+	 //   $("<code contenteditable ='true'></code>").appendTo("pre");
+	//	var newWrapper = document.createElement('ntag');
+		$("<code contenteditable ='true'></code>").appendTo($(this).parent());
+		$(this).replaceWith("<b>" + this.outerHTML + "</b>");
+
 	}
     });
   
@@ -21,11 +27,5 @@ $(document).ready(function(){
     });
     */
 
-    editor.on("change",function(e){
-	//return "data"	
-	//console.log(Object.keys(e));
-	console.log(e.data);
-    });
 
-//    $("#snapButton").onclick
 });

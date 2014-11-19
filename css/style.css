@@ -58,3 +58,19 @@ overflow: auto;
 mytag {
 color: #f14e32;
 }
+
+*.typen
+{}
+
+ntag {
+contenteditable: true;
+color: #EE3B3B; 
+}
+
+vtag {
+color: #1E90FF; 
+}
+
+ttag {
+color: #CD5555; 
+}

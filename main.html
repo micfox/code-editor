@@ -6,11 +6,11 @@
   <title>Code Editor</title>
 <link href="css/style.css" media="screen" rel="stylesheet" />
 <script src="js/jquery-1.11.1.js"></script>
-<script src="js/jsdifflib/difflib.js"></script>
 <script src="js/function.js"></script>
 </head>
 <body>
 
+<!--
   <pre id="editor">function foo(items){
     var x = "All this is syntax hilighted";
     return x;
@@ -23,19 +23,19 @@
     editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/javascript");
   </script>
+ -->
 <div></div>
 <button onclick="console.log(
 		 editor.getSession().getLine(0)
 		 );"> tg: getLine </button>
 <div></div>
-<button onclick="v1=difflib.stringAsLines(editor.getValue());">: snap text</button>
-<button onclick="v2=difflib.stringAsLines(editor.getValue());
-		 sm=new difflib.SequenceMatcher(v1,v2);
-		 var opcodes=sm.get_opcodes();">: diff</button>
+
+<button id="gen">: genHtml</button>
+<button >: diff</button>
 	<code>git commit</code>
 	<pre><code contenteditable = "true">define all
 </code></pre>
-	<pre><mytag><code>$ git fetch [remote-name]
-</code></mytag></pre>
+	<pre id="panel"><mytag><code contenteditable = "true">同步数据时不会崩溃</code></mytag>
+<ntag>a noun </ntag><vtag>a verb </vtag><ttag>the target </ttag></pre>
 </body>
 </html>
